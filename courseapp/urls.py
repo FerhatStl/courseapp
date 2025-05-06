@@ -17,17 +17,10 @@ Including another URLconf
 
 from django.contrib import admin
 from django.http import HttpResponse
-from django.urls import path
+from django.urls import path, include
 
-def home(request):
-    return HttpResponse('anasayfa')
-
-def kurslar(request):
-    return HttpResponse("Kurs Listesi")
 
 urlpatterns = [
-    path("", home),
-    path("anasayfa", home),
-    path("kurslar", kurslar),
+    path('', include('courses.urls')),
     path("admin/", admin.site.urls),
 ]
