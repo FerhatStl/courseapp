@@ -1,14 +1,15 @@
 from django.http import HttpResponse
 from django.urls import path
-from .views import home, kurslar
-    # http://127.0.0.1:8000/        => anasayfa
-    # http://127.0.0.1:8000/home    => anasayfa
-    # http://127.0.0.1:8000/kurslar => kurs listesi
+from . import views
+
 
 
 
 urlpatterns = [
-    path("", home),
-    path("anasayfa", home),
-    path("kurslar", kurslar)
+    path("", views.kurslar),
+    path("list", views.kurslar),
+    path("details", views.details),
+    path("programlama", views.programlama),
+    path("mobil-uygulamalar", views.mobiluygulamalar),
+    
 ]
